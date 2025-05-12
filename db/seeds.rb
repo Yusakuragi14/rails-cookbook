@@ -14,10 +14,14 @@ Bookmark.destroy_all
 puts "Database cleaned"
 
 puts "creating recipes..."
-receipes = [
+recipes = [
   { name: "Spaghetti Bolognese", description: "A classic Italian pasta dish with a rich meat sauce.", rating: 4.5 },
   { name: "Chicken Curry", description: "A spicy and flavorful chicken dish cooked in a creamy sauce.", rating: 4.7 },
   { name: "Vegetable Stir Fry", description: "A quick and healthy dish with mixed vegetables and soy sauce.", rating: 4.2 },
   { name: "Beef Tacos", description: "Soft or hard shell tacos filled with seasoned beef and toppings.", rating: 4.6 }
 ]
+recipes.each do |recipe|
+  Recipe.create!(recipe)
+end
+
 puts "recipes created"
