@@ -3,6 +3,9 @@
 
 <ul>
   <% @category.recipes.each do |recipe| %>
-    <li><%= recipe.name %></li>
+    <li>
+      <%= recipe.name %> |
+      <%= link_to "Delete", bookmark_path(recipe.bookmark), method: :delete, data: { confirm: "Are you sure?" } %>
+    </li>
   <% end %>
 </ul>
